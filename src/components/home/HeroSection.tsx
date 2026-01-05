@@ -4,7 +4,7 @@ import { ArrowRight, Shield, TrendingUp, Users, Zap } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="relative gradient-hero overflow-hidden">
+    <section className="relative bg-background overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -right-40 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-float" />
@@ -24,7 +24,7 @@ const HeroSection = () => {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6 animate-slide-up">
             Fund the Change
             <br />
-            <span className="text-gradient">You Believe In</span>
+            <span>You Believe In</span>
           </h1>
 
           {/* Subheading */}

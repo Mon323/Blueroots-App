@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Heart, Mail, Lock, User, ArrowRight, Eye, EyeOff } from "lucide-react";
+import { Mail, Lock, User, ArrowRight, Eye, EyeOff } from "lucide-react";
 
 const Auth = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -30,10 +30,12 @@ const Auth = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 mb-12">
             <div className="w-10 h-10 rounded-lg gradient-primary flex items-center justify-center shadow-md">
-              <Heart className="w-5 h-5 text-primary-foreground" />
+              <svg viewBox="0 0 24 24" className="w-5 h-5 text-primary-foreground" fill="currentColor">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" strokeWidth="2" fill="none"/>
+              </svg>
             </div>
             <span className="text-2xl font-bold text-foreground">
-              Blue<span className="text-gradient">Roots</span>
+              Blue<span>Roots</span>
             </span>
           </Link>
 

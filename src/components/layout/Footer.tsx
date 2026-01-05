@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Heart, Twitter, Facebook, Linkedin, Mail } from "lucide-react";
+import { Twitter, Facebook, Linkedin, Mail } from "lucide-react";
 
 const Footer = () => {
   const footerLinks = {
@@ -37,7 +37,9 @@ const Footer = () => {
           <div className="col-span-2 md:col-span-1">
             <Link to="/" className="flex items-center gap-2 mb-4">
               <div className="w-9 h-9 rounded-lg gradient-primary flex items-center justify-center">
-                <Heart className="w-5 h-5 text-primary-foreground" />
+                <svg viewBox="0 0 24 24" className="w-5 h-5 text-primary-foreground" fill="currentColor">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" strokeWidth="2" fill="none"/>
+                </svg>
               </div>
               <span className="text-xl font-bold">BlueRoots</span>
             </Link>

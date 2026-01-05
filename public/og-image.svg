@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3a8a"/>
+      <stop offset="100%" style="stop-color:#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#60a5fa"/>
+      <stop offset="100%" style="stop-color:#3b82f6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Decorative circles -->
+  <circle cx="1000" cy="100" r="200" fill="#60a5fa" opacity="0.1"/>
+  <circle cx="200" cy="500" r="150" fill="#60a5fa" opacity="0.1"/>
+
+  <!-- Logo icon -->
+  <g transform="translate(100, 100)">
+    <rect width="80" height="80" rx="16" fill="url(#accent)"/>
+    <g transform="translate(16, 16) scale(2.4)">
+      <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
+
+  <!-- Title -->
+  <text x="100" y="280" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-size="72" font-weight="800" fill="white">
+    BlueRoots
+  </text>
+
+  <!-- Subtitle -->
+  <text x="100" y="350" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-size="32" font-weight="500" fill="#cbd5e1">
+    Political Fundraising Platform
+  </text>
+
+  <!-- Tagline -->
+  <text x="100" y="420" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-size="24" font-weight="400" fill="#94a3b8" max-width="600">
+    Transparent • Compliant • Built for Impact
+  </text>
+
+  <!-- CTA -->
+  <rect x="100" y="470" width="200" height="60" rx="30" fill="white"/>
+  <text x="200" y="512" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-size="20" font-weight="600" fill="#1e3a8a" text-anchor="middle">
+    Get Started
+  </text>
+
+  <!-- URL -->
+  <text x="100" y="580" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-size="20" font-weight="400" fill="#94a3b8">
+    give.blueroots.io
+  </text>
+</svg>

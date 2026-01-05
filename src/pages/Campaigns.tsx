@@ -4,113 +4,99 @@ import CampaignCard from "@/components/campaigns/CampaignCard";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
-import { Search, SlidersHorizontal, X } from "lucide-react";
+import { Search, X } from "lucide-react";
 
-const categories = [
-  "All",
-  "Political",
-  "Environment",
-  "Healthcare",
-  "Education",
-  "Civic",
-  "Community",
-  "Non-Profit",
-];
-
-// Mock campaign data
+// Political campaign data
 const allCampaigns = [
   {
     id: "1",
-    title: "Clean Energy Initiative for Rural Communities",
-    description: "Bringing sustainable solar power to underserved rural communities across the Midwest.",
-    image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80",
-    category: "Environment",
-    raised: 127500,
-    goal: 200000,
-    donors: 2847,
-    daysLeft: 18,
-    location: "Iowa",
-    featured: true,
-  },
-  {
-    id: "2",
-    title: "Youth Voter Registration Drive 2026",
-    description: "Empowering young voters through education, registration assistance, and civic engagement.",
-    image: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=800&q=80",
-    category: "Civic",
-    raised: 45000,
-    goal: 75000,
-    donors: 1256,
-    daysLeft: 32,
-    location: "National",
-  },
-  {
-    id: "3",
-    title: "Healthcare Access for Veterans",
-    description: "Providing mental health resources and medical support for veterans.",
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80",
-    category: "Healthcare",
-    raised: 89000,
-    goal: 150000,
-    donors: 1834,
-    daysLeft: 45,
-    location: "Texas",
-  },
-  {
-    id: "4",
-    title: "STEM Education for Underserved Schools",
-    description: "Bringing robotics labs and coding programs to schools that need them most.",
-    image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80",
-    category: "Education",
-    raised: 67000,
-    goal: 100000,
-    donors: 892,
-    daysLeft: 21,
-    location: "Georgia",
-  },
-  {
-    id: "5",
-    title: "Community Garden Network",
-    description: "Creating urban gardens to address food insecurity in downtown neighborhoods.",
-    image: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&q=80",
-    category: "Community",
-    raised: 23000,
-    goal: 40000,
-    donors: 456,
-    daysLeft: 60,
-    location: "Michigan",
-  },
-  {
-    id: "6",
-    title: "Local Democracy Action Fund",
-    description: "Supporting grassroots candidates in local elections across swing districts.",
+    title: "Progressive Senate Campaign 2026",
+    description: "Electing a voice for working families, healthcare reform, and climate action.",
     image: "https://images.unsplash.com/photo-1541872703-74c5e44368f9?w=800&q=80",
     category: "Political",
     raised: 156000,
     goal: 250000,
     donors: 3421,
-    daysLeft: 14,
+    daysLeft: 120,
     location: "Pennsylvania",
+    featured: true,
+  },
+  {
+    id: "2",
+    title: "City Council Reform Initiative",
+    description: "Supporting candidates committed to transparency, accountability, and community-first policies.",
+    image: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=800&q=80",
+    category: "Political",
+    raised: 45000,
+    goal: 75000,
+    donors: 1256,
+    daysLeft: 90,
+    location: "California",
+  },
+  {
+    id: "3",
+    title: "State Assembly Election Fund",
+    description: "Electing representatives for affordable housing, public education, and environmental protection.",
+    image: "https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?w=800&q=80",
+    category: "Political",
+    raised: 89000,
+    goal: 150000,
+    donors: 1834,
+    daysLeft: 105,
+    location: "Texas",
+  },
+  {
+    id: "4",
+    title: "Local School Board Candidates",
+    description: "Supporting candidates committed to improving public education for all children.",
+    image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80",
+    category: "Political",
+    raised: 67000,
+    goal: 100000,
+    donors: 892,
+    daysLeft: 60,
+    location: "Georgia",
+  },
+  {
+    id: "5",
+    title: "County Sheriff Reform Campaign",
+    description: "Advancing law enforcement accountability and community safety initiatives.",
+    image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800&q=80",
+    category: "Political",
+    raised: 23000,
+    goal: 50000,
+    donors: 456,
+    daysLeft: 45,
+    location: "Michigan",
+  },
+  {
+    id: "6",
+    title: "Grassroots Organizing Fund",
+    description: "Building political power from the ground up with community-driven campaigns.",
+    image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&q=80",
+    category: "Political",
+    raised: 112000,
+    goal: 200000,
+    donors: 2156,
+    daysLeft: 180,
+    location: "Florida",
     featured: true,
   },
 ];
 
 const Campaigns = () => {
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("All");
 
   const filteredCampaigns = allCampaigns.filter((campaign) => {
-    const matchesSearch =
+    return (
       campaign.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      campaign.description.toLowerCase().includes(searchQuery.toLowerCase());
-    const matchesCategory =
-      selectedCategory === "All" || campaign.category === selectedCategory;
-    return matchesSearch && matchesCategory;
+      campaign.description.toLowerCase().includes(searchQuery.toLowerCase())
+    );
   });
 
   return (
     <Layout>
-      <div className="gradient-hero">
+      <div className="bg-background">
         <div className="container mx-auto px-4 py-12">
           {/* Header */}
           <div className="max-w-3xl">
@@ -125,13 +111,12 @@ const Campaigns = () => {
       </div>
 
       <div className="container mx-auto px-4 py-8">
-        {/* Filters */}
-        <div className="flex flex-col lg:flex-row gap-4 mb-8">
-          {/* Search */}
-          <div className="relative flex-1 max-w-md">
+        {/* Search */}
+        <div className="max-w-md mb-8">
+          <div className="relative">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
             <Input
-              placeholder="Search campaigns..."
+              placeholder="Search political campaigns..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="pl-10"
@@ -144,23 +129,6 @@ const Campaigns = () => {
                 <X className="w-4 h-4" />
               </button>
             )}
-          </div>
-
-          {/* Category Filters */}
-          <div className="flex flex-wrap gap-2">
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setSelectedCategory(category)}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-                  selectedCategory === category
-                    ? "gradient-primary text-primary-foreground shadow-md"
-                    : "bg-muted text-muted-foreground hover:bg-muted/80 hover:text-foreground"
-                }`}
-              >
-                {category}
-              </button>
-            ))}
           </div>
         </div>
 
